@@ -108,15 +108,15 @@ export function GiggerHub() {
           </p>
         </div>
 
-        {/* Filter */}
+        {/* Filter - touch optimized */}
         <div className="flex items-center gap-2">
           <Filter className="h-4 w-4 text-[#8B9CB6]" />
-          <div className="flex gap-1 bg-[#162035] border border-[#ffffff10] rounded-lg p-1 overflow-x-auto">
+          <div className="flex gap-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-1 overflow-x-auto">
             {(["all", "seeding", "harvesting"] as const).map((type) => (
               <button
                 key={type}
                 onClick={() => setFilter(type)}
-                className={`px-3 py-2 min-h-[44px] rounded-md text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                className={`px-3 py-2 min-h-[48px] rounded-md text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                   filter === type ? "bg-[#26DE81]/20 text-[#26DE81]" : "text-[#8B9CB6] hover:text-[#F1FAEE]"
                 }`}
               >
@@ -127,8 +127,8 @@ export function GiggerHub() {
         </div>
       </div>
 
-      {/* Gig Cards */}
-      <div className="grid gap-3 sm:gap-4">
+      {/* Gig Cards - mobile-first responsive grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <AnimatePresence mode="popLayout">
           {filteredGigs.map((gig, index) => (
             <motion.div
@@ -137,7 +137,7 @@ export function GiggerHub() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-xl p-3 sm:p-4 lg:p-5 hover:bg-[#1A2538] transition-colors group"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 lg:p-5 hover:bg-white/10 transition-colors group"
             >
               <div className="flex flex-col gap-3 sm:gap-4">
                 {/* Icon and Title */}
@@ -180,7 +180,7 @@ export function GiggerHub() {
                       {gig.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full bg-[#1A2538] border border-[#ffffff10] text-[#8B9CB6]"
+                          className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[#8B9CB6]"
                         >
                           {skill}
                         </span>
@@ -190,7 +190,7 @@ export function GiggerHub() {
                 </div>
 
                 {/* Stats and Action */}
-                <div className="flex items-center justify-between gap-4 pt-3 border-t border-[#ffffff10]">
+                <div className="flex items-center justify-between gap-4 pt-3 border-t border-white/10">
                   <div className="flex items-center gap-4 sm:gap-6">
                     <div className="flex flex-col items-center">
                       <span className="text-base sm:text-lg font-bold text-[#26DE81]">{gig.pay}</span>
@@ -213,7 +213,7 @@ export function GiggerHub() {
                       variant="outline"
                       size="sm"
                       disabled
-                      className="border-[#26DE81]/30 text-[#26DE81] gap-1 bg-transparent min-h-[44px] text-xs sm:text-sm"
+                      className="border-[#26DE81]/30 text-[#26DE81] gap-1 bg-transparent min-h-[48px] px-4 text-xs sm:text-sm"
                     >
                       <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       Applied
@@ -222,7 +222,7 @@ export function GiggerHub() {
                     <Button
                       size="sm"
                       onClick={() => handleApply(gig.id)}
-                      className="bg-[#26DE81] hover:bg-[#26DE81]/90 text-[#0B1120] border-0 gap-1 font-medium min-h-[44px] text-xs sm:text-sm"
+                      className="bg-[#26DE81] hover:bg-[#26DE81]/90 text-[#0B1120] border-0 gap-1 font-medium min-h-[48px] px-4 text-xs sm:text-sm"
                     >
                       Apply
                       <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -235,26 +235,26 @@ export function GiggerHub() {
         </AnimatePresence>
       </div>
 
-      {/* Summary Stats */}
+      {/* Summary Stats - glassmorphism */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-[#ffffff10]"
+        className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-white/10"
       >
-        <div className="text-center">
+        <div className="text-center bg-white/5 backdrop-blur-md rounded-xl p-3">
           <div className="text-lg sm:text-2xl font-bold text-[#26DE81]">৳14.3K</div>
           <div className="text-[10px] sm:text-xs text-[#8B9CB6]">Total Earnings Available</div>
         </div>
-        <div className="text-center">
+        <div className="text-center bg-white/5 backdrop-blur-md rounded-xl p-3">
           <div className="text-lg sm:text-2xl font-bold text-[#635BFF]">24</div>
           <div className="text-[10px] sm:text-xs text-[#8B9CB6]">Open Slots</div>
         </div>
-        <div className="text-center">
+        <div className="text-center bg-white/5 backdrop-blur-md rounded-xl p-3">
           <div className="text-lg sm:text-2xl font-bold text-[#F1FAEE]">5</div>
           <div className="text-[10px] sm:text-xs text-[#8B9CB6]">Active Gigs</div>
         </div>
-        <div className="text-center">
+        <div className="text-center bg-white/5 backdrop-blur-md rounded-xl p-3">
           <div className="text-lg sm:text-2xl font-bold text-[#F1FAEE]">2</div>
           <div className="text-[10px] sm:text-xs text-[#8B9CB6]">Urgent Needs</div>
         </div>

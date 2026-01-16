@@ -39,7 +39,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="mb-4 sm:mb-6"
           >
-            <span className="inline-flex items-center gap-2 bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-[#26DE81]">
+            <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-[#26DE81]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#26DE81] pulse-live" />
               Innovation Hub
             </span>
@@ -81,7 +81,7 @@ export function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="flex items-center justify-center gap-2 bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-full px-6 py-3 min-h-[48px] w-full sm:w-auto text-base font-medium text-[#F1FAEE] transition-all hover:bg-[#1A2538]"
+              className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 min-h-[48px] w-full sm:w-auto text-base font-medium text-[#F1FAEE] transition-all hover:bg-white/10"
             >
               <Play className="h-4 w-4" />
               Watch Overview
@@ -89,7 +89,7 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Stats row */}
+        {/* Stats row - glassmorphism */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export function HeroSection() {
           ].map((stat, i) => (
             <div
               key={i}
-              className="bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-xl p-3 sm:p-4 text-center"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center"
             >
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#26DE81] text-glow-green">
                 {stat.value}

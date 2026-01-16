@@ -67,9 +67,15 @@
   --bio-green-dim: #1a9d5c;
   --ocean-dark: #0b1120;
   /* Glass for glassmorphism */
-  --glass: rgba(15, 23, 42, 0.4);
+  --glass: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.063);
   --card-border: rgba(255, 255, 255, 0.063);
+
+  /* MFS Transparency Bar colors */
+  --mfs-farmer: #26de81;
+  --mfs-worker: #635bff;
+  --mfs-student: #e9c46a;
+  --mfs-platform: #64748b;
 }
 
 @theme inline {
@@ -123,6 +129,12 @@
   --color-ocean-dark: var(--ocean-dark);
   --color-glass: var(--glass);
   --color-glass-border: var(--glass-border);
+
+  /* MFS colors for theme */
+  --color-mfs-farmer: var(--mfs-farmer);
+  --color-mfs-worker: var(--mfs-worker);
+  --color-mfs-student: var(--mfs-student);
+  --color-mfs-platform: var(--mfs-platform);
 }
 
 @layer base {
@@ -134,14 +146,28 @@
   }
 }
 
-/* Global background image applied to html element with fixed attachment */
+/* Fixed background with object-fit cover behavior using pseudo-element for better mobile/ultrawide support */
 html {
-  background-image: url("https://i.postimg.cc/Z5h9Hm4j/junior_louis_jean_q_EF1Cx_K1Ht4_unsplash.jpg");
+  min-height: 100vh;
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/images/junior-louis-jean-qef1cxk1ht4-unsplash.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  z-index: -1;
+}
+
+/* iOS Safari fix - use scroll instead of fixed for better performance */
+@supports (-webkit-touch-callout: none) {
+  html::before {
+    background-attachment: scroll;
+  }
 }
 
 body {
@@ -153,19 +179,25 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Updated glassmorphism with backdrop-blur-md */
+/* Enhanced glassmorphism with backdrop-blur-md and bg-white/5 */
 .glass {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
 }
 
 .glass-strong {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--card-border);
+}
+
+/* Touch-optimized minimum tap target */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
 }
 
 /* Glow effects */
@@ -212,4 +244,37 @@ body {
 
 .pulse-live {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glowing node animation for map */
+@keyframes node-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.node-glow {
+  animation: node-pulse 2s ease-in-out infinite;
+}
+
+/* Counter animation */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count {
+  animation: count-up 0.6s ease-out forwards;
 }

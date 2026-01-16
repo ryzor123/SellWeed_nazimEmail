@@ -1,6 +1,8 @@
 import { GlobalNav } from "@/components/global-nav"
 import { HeroSection } from "@/components/hero-section"
 import { BentoGrid } from "@/components/bento-grid"
+import { ImpactVerification } from "@/components/impact-verification"
+import { MFSTransparencyBar } from "@/components/mfs-transparency-bar"
 import { NetworkSection } from "@/components/network/network-section"
 import { EconomySection } from "@/components/economy/economy-section"
 import { ResilienceSection } from "@/components/resilience/resilience-section"
@@ -12,6 +14,8 @@ export default function Home() {
       <GlobalNav />
       <HeroSection />
       <BentoGrid />
+      <ImpactVerification />
+      <MFSTransparencyBar />
       <NetworkSection />
       <EconomySection />
       <ResilienceSection />

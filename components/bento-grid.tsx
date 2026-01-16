@@ -124,7 +124,7 @@ function ModuleCard({ module }: { module: (typeof modules)[0] }) {
       variants={itemVariants}
       whileHover={{ y: -4, scale: 1.01 }}
       transition={{ duration: 0.3 }}
-      className="group relative bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-2xl p-4 sm:p-6 lg:p-8 overflow-hidden"
+      className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 overflow-hidden"
       id={module.id}
     >
       {/* Glow effect on hover */}
@@ -142,7 +142,7 @@ function ModuleCard({ module }: { module: (typeof modules)[0] }) {
           </div>
           <motion.button
             whileHover={{ scale: 1.1, rotate: 45 }}
-            className="p-2 min-h-[44px] min-w-[44px] flex items-center justify-center bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+            className="p-2 min-h-[48px] min-w-[48px] flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
           >
             <ArrowUpRight className="h-4 w-4 text-slate-50" />
           </motion.button>
@@ -155,10 +155,10 @@ function ModuleCard({ module }: { module: (typeof modules)[0] }) {
           <p className="text-slate-400 text-sm leading-relaxed line-clamp-3 sm:line-clamp-none">{module.description}</p>
         </div>
 
-        {/* Stats */}
+        {/* Stats - glassmorphism cards */}
         <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-6">
           {module.stats.map((stat, i) => (
-            <div key={i} className="bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-lg p-2 sm:p-3">
+            <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-2 sm:p-3">
               <div className={`text-lg sm:text-xl lg:text-2xl font-bold ${colors.text}`}>{stat.value}</div>
               <div className="text-[10px] sm:text-xs text-slate-400">{stat.label}</div>
             </div>
@@ -170,7 +170,7 @@ function ModuleCard({ module }: { module: (typeof modules)[0] }) {
           {module.features.map((feature, i) => (
             <span
               key={i}
-              className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-full text-slate-400"
+              className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-slate-400"
             >
               {feature}
             </span>
@@ -196,7 +196,7 @@ export function BentoGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-16"
         >
-          <span className="inline-flex items-center gap-2 bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-[#26DE81] mb-3 sm:mb-4">
+          <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-[#26DE81] mb-3 sm:mb-4">
             <Leaf className="h-3 w-3 sm:h-4 sm:w-4" />
             Core Modules
           </span>
@@ -237,7 +237,7 @@ export function BentoGrid() {
           </div>
         </motion.div>
 
-        {/* Bottom accent cards */}
+        {/* Bottom accent cards - glassmorphism */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -253,7 +253,7 @@ export function BentoGrid() {
             <motion.div
               key={i}
               whileHover={{ y: -2 }}
-              className="bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4"
             >
               <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#26DE81]/20">
                 <item.icon className="h-4 w-4 sm:h-5 sm:w-5 text-[#26DE81]" />

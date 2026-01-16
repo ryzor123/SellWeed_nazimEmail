@@ -23,7 +23,7 @@ export function EconomySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12"
         >
-          <span className="inline-flex items-center gap-2 bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-[#26DE81] mb-3 sm:mb-4">
+          <span className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-[#26DE81] mb-3 sm:mb-4">
             <Banknote className="h-3 w-3 sm:h-4 sm:w-4" />
             Economy Module
           </span>
@@ -44,10 +44,10 @@ export function EconomySection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Tabs defaultValue="gigger-hub" className="w-full">
-            <TabsList className="w-full justify-start bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] p-1 mb-4 sm:mb-6 overflow-x-auto flex-nowrap">
+            <TabsList className="w-full justify-start bg-white/5 backdrop-blur-md border border-white/10 p-1 mb-4 sm:mb-6 overflow-x-auto flex-nowrap">
               <TabsTrigger
                 value="gigger-hub"
-                className="data-[state=active]:bg-[#26DE81]/20 data-[state=active]:text-[#26DE81] gap-1.5 sm:gap-2 text-[#8B9CB6] min-h-[44px] text-xs sm:text-sm whitespace-nowrap"
+                className="data-[state=active]:bg-[#26DE81]/20 data-[state=active]:text-[#26DE81] gap-1.5 sm:gap-2 text-[#8B9CB6] min-h-[48px] text-xs sm:text-sm whitespace-nowrap"
               >
                 <Briefcase className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="hidden sm:inline">Gigger Hub</span>
@@ -55,7 +55,7 @@ export function EconomySection() {
               </TabsTrigger>
               <TabsTrigger
                 value="exchange"
-                className="data-[state=active]:bg-[#26DE81]/20 data-[state=active]:text-[#26DE81] gap-1.5 sm:gap-2 text-[#8B9CB6] min-h-[44px] text-xs sm:text-sm whitespace-nowrap"
+                className="data-[state=active]:bg-[#26DE81]/20 data-[state=active]:text-[#26DE81] gap-1.5 sm:gap-2 text-[#8B9CB6] min-h-[48px] text-xs sm:text-sm whitespace-nowrap"
               >
                 <Scale className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="hidden sm:inline">Exchange</span>
@@ -63,7 +63,7 @@ export function EconomySection() {
               </TabsTrigger>
               <TabsTrigger
                 value="oracle-desk"
-                className="data-[state=active]:bg-[#26DE81]/20 data-[state=active]:text-[#26DE81] gap-1.5 sm:gap-2 text-[#8B9CB6] min-h-[44px] text-xs sm:text-sm whitespace-nowrap"
+                className="data-[state=active]:bg-[#26DE81]/20 data-[state=active]:text-[#26DE81] gap-1.5 sm:gap-2 text-[#8B9CB6] min-h-[48px] text-xs sm:text-sm whitespace-nowrap"
               >
                 <Landmark className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="hidden sm:inline">Oracle Desk</span>
@@ -71,7 +71,7 @@ export function EconomySection() {
               </TabsTrigger>
             </TabsList>
 
-            <div className="bg-slate-900/40 backdrop-blur-md border border-[#ffffff10] rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 min-h-[500px] sm:min-h-[600px]">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 min-h-[500px] sm:min-h-[600px]">
               <TabsContent value="gigger-hub" className="mt-0">
                 <GiggerHub />
               </TabsContent>
