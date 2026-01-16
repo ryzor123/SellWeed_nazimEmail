@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Waves, Github, Twitter, Linkedin, Mail } from "lucide-react"
+import { Github, Twitter, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
 
 const footerLinks = {
   product: [
@@ -43,13 +44,15 @@ export function Footer() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
-          {/* Brand */}
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#26DE81]/20 glow-teal">
-                <Waves className="h-5 w-5 text-[#26DE81]" />
-              </div>
-              <span className="text-lg font-semibold tracking-tight text-[#F1FAEE]">SellWeed</span>
+              <Image
+                src="/images/sellweed-logo.png"
+                alt="SellWeed"
+                width={140}
+                height={45}
+                className="h-10 w-auto brightness-125 contrast-110 drop-shadow-[0_0_12px_rgba(38,222,129,0.35)]"
+              />
             </a>
             <p className="text-sm text-[#8B9CB6] mb-6 max-w-xs">
               Pioneering sustainable ocean farming for a climate-positive future.
@@ -125,7 +128,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-[#ffffff10] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-[#8B9CB6]">© 2026 Project SellWeed. All rights reserved.</p>
+          <p className="text-sm text-[#8B9CB6]">&copy; 2026 SellWeed. All rights reserved.</p>
           <div className="flex items-center gap-2 bg-[#162035] border border-[#ffffff10] rounded-full px-3 py-1.5">
             <span className="h-2 w-2 rounded-full bg-[#26DE81] pulse-live" />
             <span className="text-xs text-[#8B9CB6]">All systems operational</span>

@@ -8,7 +8,7 @@ const _inter = Inter({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Project SellWeed | Innovation Hub",
+  title: "SellWeed | Sustainable Ocean Farming",
   description:
     "Pioneering sustainable ocean farming through seaweed cultivation. Strategy, Network, Economy, and Resilience for a climate-positive future.",
   generator: "v0.app",

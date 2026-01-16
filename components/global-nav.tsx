@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Waves, Home, Globe, Banknote, Shield, Info } from "lucide-react"
+import { Menu, X, Home, Globe, Banknote, Shield, Info } from "lucide-react"
 import { LiveStatusIndicator } from "./live-status-indicator"
+import Image from "next/image"
 
 const navLinks = [
   { name: "Strategy", href: "#strategy", icon: Home },
@@ -39,17 +40,20 @@ export function GlobalNav() {
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
             <motion.a
               href="#"
               className="flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#26DE81]/20 glow-teal">
-                <Waves className="h-5 w-5 text-[#26DE81]" />
-              </div>
-              <span className="text-lg font-semibold tracking-tight text-[#F1FAEE]">SellWeed</span>
+              <Image
+                src="/images/sellweed-logo.png"
+                alt="SellWeed"
+                width={140}
+                height={45}
+                className="h-10 w-auto brightness-110 drop-shadow-[0_0_12px_rgba(38,222,129,0.4)]"
+                priority
+              />
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -93,12 +97,15 @@ export function GlobalNav() {
       >
         <nav className="px-4">
           <div className="flex h-14 items-center justify-between">
-            {/* Logo */}
             <a href="#" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#26DE81]/20 glow-teal">
-                <Waves className="h-4 w-4 text-[#26DE81]" />
-              </div>
-              <span className="text-base font-semibold tracking-tight text-[#F1FAEE]">SellWeed</span>
+              <Image
+                src="/images/sellweed-logo.png"
+                alt="SellWeed"
+                width={100}
+                height={32}
+                className="h-8 w-auto brightness-110 drop-shadow-[0_0_8px_rgba(38,222,129,0.35)]"
+                priority
+              />
             </a>
 
             <div className="flex items-center gap-3">
@@ -136,7 +143,13 @@ export function GlobalNav() {
               >
                 {/* Sidebar Header */}
                 <div className="flex items-center justify-between p-4 border-b border-[#ffffff10]">
-                  <span className="text-lg font-semibold text-[#F1FAEE]">Menu</span>
+                  <Image
+                    src="/images/sellweed-logo.png"
+                    alt="SellWeed"
+                    width={100}
+                    height={32}
+                    className="h-8 w-auto brightness-110"
+                  />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#F1FAEE]"

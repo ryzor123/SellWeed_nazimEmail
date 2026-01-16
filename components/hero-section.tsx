@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowDown, Play } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -45,6 +46,22 @@ export function HeroSection() {
             </span>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="mb-6 sm:mb-8 flex justify-center"
+          >
+            <Image
+              src="/images/sellweed-logo.png"
+              alt="SellWeed"
+              width={320}
+              height={100}
+              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto brightness-125 contrast-105 drop-shadow-[0_0_30px_rgba(38,222,129,0.5)]"
+              priority
+            />
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,8 +77,8 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl text-[#8B9CB6] mb-8 sm:mb-10 text-pretty px-2"
           >
-            Project SellWeed pioneers sustainable seaweed farming at scale, transforming ocean agriculture into a
-            cornerstone of the climate-positive economy.
+            SellWeed pioneers sustainable seaweed farming at scale, transforming ocean agriculture into a cornerstone of
+            the climate-positive economy.
           </motion.p>
 
           <motion.div
@@ -98,7 +115,7 @@ export function HeroSection() {
         >
           {[
             { value: "12+", label: "Ocean Farms" },
-            { value: "850K", label: "Tons CO₂ Captured" },
+            { value: "850K", label: "Tons CO2 Captured" },
             { value: "24/7", label: "Live Monitoring" },
             { value: "98%", label: "Uptime" },
           ].map((stat, i) => (
