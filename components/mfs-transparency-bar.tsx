@@ -70,9 +70,6 @@ export function MFSTransparencyBar() {
           <div className="relative h-8 sm:h-10 lg:h-12 rounded-full overflow-hidden bg-[#1A2538] mb-4">
             <div className="absolute inset-0 flex">
               {segments.map((segment, index) => {
-                // Calculate left position
-                const leftPosition = segments.slice(0, index).reduce((acc, s) => acc + s.percentage, 0)
-
                 return (
                   <motion.div
                     key={segment.id}
